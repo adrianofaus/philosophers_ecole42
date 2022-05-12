@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/06 23:43:34 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/12 20:49:14 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,18 @@ void	*philo_algorithm(void *ptr);
 
 void	print_action(t_philo *philo, int action)
 {
+	long	time_interval;
+
 	pthread_mutex_lock(&(philo->table->microphone));
+	time_interval = get_time_interval(philo->table->timer);
 	if (action == EATING)
-		printf("Philo %d has started eating...\n", philo->philo_num);
+		printf("%ld\t%d is eating\n", time_interval, philo->philo_num);
 	else if (action == SLEEPING)
-		printf("Philo %d has started sleeping...\n", philo->philo_num);
+		printf("%ld\t%d is sleeping\n", time_interval, philo->philo_num);
 	else if (action == THINKING)
-		printf("Philo %d has started thinking...\n", philo->philo_num);
+		printf("%ld\t%d is thinking\n", time_interval, philo->philo_num);
 	else if (action == HAS_TAKEN_A_FORK)
-		printf("Philo %d has taken a fork\n", philo->philo_num);
+		printf("%ld\t%d has taken a fork\n", time_interval, philo->philo_num);
 	pthread_mutex_unlock(&(philo->table->microphone));
 }
 
@@ -37,8 +40,8 @@ void	*devour(t_philo *philo)
 	print_action(philo, HAS_TAKEN_A_FORK);
 	pthread_mutex_lock(philo->right_hand);
 	print_action(philo, HAS_TAKEN_A_FORK);
-	usleep((philo->table->time_to_eat * 1000));
 	print_action(philo, EATING);
+	usleep((philo->table->time_to_eat * 1000));
 	pthread_mutex_unlock(philo->left_hand);
 	pthread_mutex_unlock(philo->right_hand);
 	return (NULL);

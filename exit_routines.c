@@ -6,11 +6,15 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:01:25 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/06 20:27:57 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/12 19:19:07 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int	ft_free_ptr(void *ptr);
+int	ft_free_arr(void **arr, int size);
+int	print_err(char *msg);
 
 int	ft_free_ptr(void *ptr)
 {
