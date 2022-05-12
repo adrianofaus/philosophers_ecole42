@@ -1,0 +1,147 @@
+<mxfile host="app.diagrams.net" modified="2022-05-01T23:39:27.934Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36 Edg/101.0.1210.32" etag="YYk_RU8Rt82UpUAjBT10" version="17.5.0" type="github">
+  <diagram id="1qbDPX5Uhlmdf6nc6Lmm" name="Page-1">
+    <mxGraphModel dx="1491" dy="876" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-1" target="qc8CGsAVviZXlWfKFUCm-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-1" value="Receive arguments" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="250" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-13" target="qc8CGsAVviZXlWfKFUCm-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-13" value="Call validate_args function" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-15" target="qc8CGsAVviZXlWfKFUCm-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-15" value="Are valid &lt;br&gt;arguments?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="460" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-20" target="qc8CGsAVviZXlWfKFUCm-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-20" value="Call initi_data function" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-22" target="qc8CGsAVviZXlWfKFUCm-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-22" value="Was data initialized correctly?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="700" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-24" target="qc8CGsAVviZXlWfKFUCm-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-24" value="Call initi_philo function" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-26" target="qc8CGsAVviZXlWfKFUCm-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-26" value="Was philo initialized correcly?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="960" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-29" target="qc8CGsAVviZXlWfKFUCm-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-29" value="Call start_simulation&lt;br&gt;function" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1090" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-212" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-37" target="qc8CGsAVviZXlWfKFUCm-210">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-37" value="has simulation finished?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-209" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-210" target="qc8CGsAVviZXlWfKFUCm-211">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-210" value="Call destroy_philos function" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-211" value="End simulation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-222" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-213" target="qc8CGsAVviZXlWfKFUCm-221">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-213" value="Receive arguments" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-226" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-221" target="qc8CGsAVviZXlWfKFUCm-225">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-234" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-221" target="qc8CGsAVviZXlWfKFUCm-233">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-221" value="&lt;span&gt;Num of&amp;nbsp;&lt;/span&gt;&lt;b&gt;args between 4 and 5&lt;/b&gt;&lt;span&gt;?&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-238" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-223">
+          <mxGeometry x="-0.4613" relative="1" as="geometry">
+            <mxPoint x="940" y="740" as="targetPoint" />
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-240" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-223" target="qc8CGsAVviZXlWfKFUCm-239">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-223" value="Is there at least &lt;b&gt;one philosopher?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;labelBorderColor=none;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="820" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-229" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-225" target="qc8CGsAVviZXlWfKFUCm-228">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-235" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-225" target="qc8CGsAVviZXlWfKFUCm-233">
+          <mxGeometry x="-0.3634" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-225" value="Are there &lt;b&gt;only digits?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="460" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-231" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-228" target="qc8CGsAVviZXlWfKFUCm-230">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-236" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-228">
+          <mxGeometry x="-0.4613" relative="1" as="geometry">
+            <mxPoint x="940" y="500" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-228" value="Are all arguments ints?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="580" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-232" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-230" target="qc8CGsAVviZXlWfKFUCm-223">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-237" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qc8CGsAVviZXlWfKFUCm-230">
+          <mxGeometry x="-0.4613" relative="1" as="geometry">
+            <mxPoint x="940" y="620" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-230" value="Are all arguments positive ints?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="700" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-233" value="&lt;b&gt;Return False&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="880" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-239" value="&lt;b&gt;Return True&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=0;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="1">
+          <mxGeometry x="680" y="960" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-241" value="&lt;h1&gt;Philosophers&lt;/h1&gt;&lt;p&gt;Main function from simulation of philosophers eating a bowl of pasta. They eat, sleep and think, each philosopher needs two forks to eat and they can do only one action at time.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Arguments passed to main&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;[num of philo][time to die][time to eat][time to sleep][number_of_time_philo_must_eat]&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="1">
+          <mxGeometry x="105" y="40" width="410" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="qc8CGsAVviZXlWfKFUCm-242" value="&lt;h1&gt;Validate args&lt;/h1&gt;&lt;p&gt;Validate arguments received from main and returns true or false&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="1">
+          <mxGeometry x="640" y="40" width="260" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
