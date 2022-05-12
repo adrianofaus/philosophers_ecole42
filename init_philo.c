@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:11:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/06 23:41:54 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/12 20:02:49 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	init_table(t_table *table, char **input)
 		pthread_mutex_init(&table->fork[fork_num], NULL);
 	pthread_mutex_init(&(table->meals_count_access), NULL);
 	pthread_mutex_init(&(table->microphone), NULL);
+	table->timer = get_current_time();
 	return (1);
 }
 

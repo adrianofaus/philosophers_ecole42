@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:24:21 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/06 23:43:12 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/12 19:18:14 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	is_numeric_string(char *str);
 int	ft_isdigit(int c);
 int	is_valid_input(int num_of_args, char **input);
+int	is_valid_int(char *str);
 
 int	ft_isdigit(int c)
 {

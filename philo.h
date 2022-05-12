@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:12:11 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/06 22:44:11 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/12 20:14:34 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_table
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				times_must_eat;
+	long			timer;
 }				t_table;
 
 typedef struct s_philo
@@ -120,6 +121,10 @@ int		is_valid_input(int num_of_args, char **input);
 
 // -------------------------------  conversion.c  ------------------------------
 long	ft_atol(const char *nptr);
+
+// -------------------------------  time.c  ------------------------------------
+long	get_current_time(void);
+long	get_time_interval(long old_timestamp);
 
 // -------------------------------  utils.c  -----------------------------------
 size_t	ft_strlen(const char *s);

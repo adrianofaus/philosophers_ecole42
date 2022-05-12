@@ -6,7 +6,7 @@
 #    By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 20:28:35 by adrianofaus       #+#    #+#              #
-#    Updated: 2022/05/05 15:25:12 by adrianofaus      ###   ########.fr        #
+#    Updated: 2022/05/12 20:07:10 by adrianofaus      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SOURCES			=	philo.c \
 					exec_routines.c \
 					philo_algorithm.c \
 					exit_routines.c \
+					time.c \
 					utils.c
 OBJS			=	$(SOURCES:%.c=%.o)
 
