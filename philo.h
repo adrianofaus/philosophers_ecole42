@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:12:11 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/12 20:14:34 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/16 23:20:56 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,24 @@ enum e_action
 	EATING,
 	SLEEPING,
 	THINKING,
-	HAS_TAKEN_A_FORK
+	HAS_TAKEN_A_FORK,
+	DIED
 };
+
+typedef struct s_waiter
+{
+	pthread_t	th;
+	int			rip;
+	int			close_the_place;
+}				t_waiter;
+
 
 typedef struct s_table
 {
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	meals_count_access;
 	pthread_mutex_t	microphone;
+	t_waiter		waiter;
 	int				num_of_philos;
 	int				time_to_die;
 	int				time_to_eat;
@@ -57,6 +67,7 @@ typedef struct s_philo
 	int				philo_num;
 	int				meals_count;
 	int				status;
+	long			last_meal;
 }				t_philo;
 
 // -------------------------------  FUNCTIONS  ---------------------------------
@@ -115,6 +126,7 @@ int		exec_routines(t_philo *philo);
 	Philosophers algorithm with philosopher's actions
 */
 void	*philo_algorithm(void *ptr);
+void	print_action(t_philo *philo, int action);
 
 // -------------------------------  validation.c  ------------------------------
 int		is_valid_input(int num_of_args, char **input);
@@ -130,5 +142,8 @@ long	get_time_interval(long old_timestamp);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
+
+// -------------------------------  waiter.c  ----------------------------------
+void	*check_all(void *arg);
 
 #endif

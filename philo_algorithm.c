@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/16 21:19:03 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/16 23:44:01 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,25 @@ void	print_action(t_philo *philo, int action)
 
 	pthread_mutex_lock(&(philo->table->microphone));
 	time_interval = get_time_interval(philo->table->timer);
-	if (action == EATING)
-		printf("%ld\t%d is eating\n", time_interval, philo->philo_num);
-	else if (action == SLEEPING)
-		printf("%ld\t%d is sleeping\n", time_interval, philo->philo_num);
-	else if (action == THINKING)
-		printf("%ld\t%d is thinking\n", time_interval, philo->philo_num);
-	else if (action == HAS_TAKEN_A_FORK)
-		printf("%ld\t%d has taken a fork\n", time_interval, philo->philo_num);
+	if (action == DIED && !philo->table->waiter.close_the_place)
+	{
+		philo->table->waiter.close_the_place = 1;
+		printf("%ld\t%d died\n", time_interval, philo->philo_num);
+	}
+	if (!philo->table->waiter.close_the_place)
+	{
+		if (action == EATING)
+		{
+			printf("%ld\t%d is eating\n", time_interval, philo->philo_num);
+			philo->last_meal = get_current_time();
+		}
+		else if (action == SLEEPING)
+			printf("%ld\t%d is sleeping\n", time_interval, philo->philo_num);
+		else if (action == THINKING)
+			printf("%ld\t%d is thinking\n", time_interval, philo->philo_num);
+		else if (action == HAS_TAKEN_A_FORK)
+			printf("%ld\t%d has taken a fork\n", time_interval, philo->philo_num);
+	}
 	pthread_mutex_unlock(&(philo->table->microphone));
 }
 
@@ -59,7 +70,7 @@ void	*philo_algorithm(void *ptr)
 	t_philo	*philo;
 
 	philo = (t_philo *)ptr;
-	while (philo->meals_count < philo->table->times_must_eat)
+	while (!philo->table->waiter.close_the_place)
 	{
 		if (philo->philo_num % 2 == 0)
 			usleep((42 * 4) / 2);

@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:11:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/12 20:02:49 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/16 23:13:39 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	init_table(t_table *table, char **input)
 	pthread_mutex_init(&(table->meals_count_access), NULL);
 	pthread_mutex_init(&(table->microphone), NULL);
 	table->timer = get_current_time();
+	table->waiter.close_the_place = 0;
 	return (1);
 }
 
@@ -53,6 +54,7 @@ int	init_philo(t_philo **philo, t_table *table)
 		(*philo)[philo_num].table = table;
 		(*philo)[philo_num].philo_num = philo_num + 1;
 		(*philo)[philo_num].left_hand = &table->fork[philo_num];
+		(*philo)[philo_num].last_meal = table->timer;
 		if (philo_num == (table->num_of_philos - 1))
 			(*philo)[philo_num].right_hand = &table->fork[0];
 		else
