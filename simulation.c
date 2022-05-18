@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/18 16:45:19 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/18 16:52:40 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	*take_a_nap(t_philo *philo)
 	return (NULL);
 }
 
-void	check_the_sink(t_philo *philo)
+void	put_in_the_sink(t_philo *philo)
 {
 	if (!philo->table->waiter.close_the_place)
 	{
