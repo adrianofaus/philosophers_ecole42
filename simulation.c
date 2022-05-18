@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_algorithm.c                                  :+:      :+:    :+:   */
+/*   simulation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/16 23:44:01 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/17 22:30:27 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	print_action(t_philo *philo, int action)
 	{
 		if (action == EATING)
 		{
-			printf("%ld\t%d is eating\n", time_interval, philo->philo_num);
 			philo->last_meal = get_current_time();
+			printf("%ld\t%d is eating\n", time_interval, philo->philo_num);
 		}
 		else if (action == SLEEPING)
 			printf("%ld\t%d is sleeping\n", time_interval, philo->philo_num);
@@ -65,7 +65,7 @@ void	*take_a_nap(t_philo *philo)
 	return (NULL);
 }
 
-void	*philo_algorithm(void *ptr)
+void	*simulation(void *ptr)
 {
 	t_philo	*philo;
 
@@ -74,6 +74,13 @@ void	*philo_algorithm(void *ptr)
 	{
 		if (philo->philo_num % 2 == 0)
 			usleep((42 * 4) / 2);
+		if (philo->table->num_of_philos == 1)
+		{
+			pthread_mutex_lock(philo->left_hand);
+			print_action(philo, HAS_TAKEN_A_FORK);
+			pthread_mutex_unlock(philo->left_hand);
+			break ;
+		}
 		devour(philo);
 		pthread_mutex_lock(&(philo->table->meals_count_access));
 		(philo->meals_count)++;

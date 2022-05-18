@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:11:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/16 23:13:39 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/17 21:51:13 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	init_philo(t_philo **philo, t_table *table)
 		(*philo)[philo_num].table = table;
 		(*philo)[philo_num].philo_num = philo_num + 1;
 		(*philo)[philo_num].left_hand = &table->fork[philo_num];
-		(*philo)[philo_num].last_meal = table->timer;
+		(*philo)[philo_num].last_meal = get_current_time();
 		if (philo_num == (table->num_of_philos - 1))
 			(*philo)[philo_num].right_hand = &table->fork[0];
 		else

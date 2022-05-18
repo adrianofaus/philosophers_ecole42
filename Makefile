@@ -6,7 +6,7 @@
 #    By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 20:28:35 by adrianofaus       #+#    #+#              #
-#    Updated: 2022/05/16 22:45:02 by adrianofaus      ###   ########.fr        #
+#    Updated: 2022/05/17 21:39:20 by adrianofaus      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ SOURCES			=	philo.c \
 					validation.c \
 					conversion.c \
 					exec_routines.c \
-					philo_algorithm.c \
+					simulation.c \
 					exit_routines.c \
 					time.c \
 					utils.c \
@@ -57,7 +57,7 @@ OBJS			=	$(SOURCES:%.c=%.o)
 all:				makedir $(NAME)
 
 makedir:
-					@$(MKDIR) $(PATH_OBJ)
+					$(MKDIR) $(PATH_OBJ)
 
 $(NAME):			$(addprefix $(PATH_OBJ),$(OBJS))
 					$(CC) $(addprefix $(PATH_OBJ),$(OBJS)) -o $(NAME)
