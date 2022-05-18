@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:12:11 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/18 15:01:54 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/18 17:48:03 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,6 @@ char	*ft_strdup(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 // -------------------------------  waiter.c  ----------------------------------
-void	*check_all(void *arg);
+void	*is_spotless(void *arg);
 
 #endif

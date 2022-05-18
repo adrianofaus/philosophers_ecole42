@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/18 16:52:40 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/18 17:45:46 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	*simulation(void *ptr)
 		}
 		devour(philo);
 		if (philo->table->times_must_eat)
-			check_the_sink(philo);
+			put_in_the_sink(philo);
 		take_a_nap(philo);
 		print_action(philo, THINKING);
 	}

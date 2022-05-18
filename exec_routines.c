@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 22:59:16 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/17 22:06:46 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/18 17:47:50 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	give_birth_to_philos(t_philo *philo)
 
 int	give_birth_to_waiter(t_philo *philo)
 {
-	if (pthread_create(&(philo->table->waiter.th), NULL, &check_all, philo))
+	if (pthread_create(&(philo->table->waiter.th), NULL, &is_spotless, philo))
 		return (0);
 	return (1);
 }

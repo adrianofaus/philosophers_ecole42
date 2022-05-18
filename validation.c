@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:24:21 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/12 19:18:14 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/18 18:24:17 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	is_valid_int(char *str)
 	long	converted_string;
 
 	converted_string = ft_atol(str);
-	if (converted_string > INT_MAX)
+	if (converted_string > INT_MAX || converted_string <= 0)
 		return (0);
 	return (1);
 }
