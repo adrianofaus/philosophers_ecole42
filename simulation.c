@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/17 22:30:27 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/18 16:45:19 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,18 @@ void	*take_a_nap(t_philo *philo)
 	return (NULL);
 }
 
+void	check_the_sink(t_philo *philo)
+{
+	if (!philo->table->waiter.close_the_place)
+	{
+		pthread_mutex_lock(&(philo->table->meals_count_access));
+		(philo->meals_count)++;
+		if (philo->meals_count <= philo->table->times_must_eat)
+			(philo->table->waiter.sink_capacity)--;
+		pthread_mutex_unlock(&(philo->table->meals_count_access));
+	}
+}
+
 void	*simulation(void *ptr)
 {
 	t_philo	*philo;
@@ -82,9 +94,8 @@ void	*simulation(void *ptr)
 			break ;
 		}
 		devour(philo);
-		pthread_mutex_lock(&(philo->table->meals_count_access));
-		(philo->meals_count)++;
-		pthread_mutex_unlock(&(philo->table->meals_count_access));
+		if (philo->table->times_must_eat)
+			check_the_sink(philo);
 		take_a_nap(philo);
 		print_action(philo, THINKING);
 	}
