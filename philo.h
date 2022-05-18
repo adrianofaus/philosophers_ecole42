@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:12:11 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/17 22:29:46 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/18 15:01:54 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ enum e_action
 typedef struct s_waiter
 {
 	pthread_t	th;
-	int			rip;
+	int			sink_capacity;
 	int			close_the_place;
 }				t_waiter;
 
