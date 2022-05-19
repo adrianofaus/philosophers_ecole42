@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_philo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:11:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/19 14:58:07 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/19 22:55:13 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	init_table(t_table *table, char **input)
 		pthread_mutex_init(&table->fork[fork_num], NULL);
 	pthread_mutex_init(&(table->meals_count_access), NULL);
 	pthread_mutex_init(&(table->microphone), NULL);
-	table->timer = get_current_time();
 	table->waiter.close_the_place = 0;
 	table->waiter.sink_capacity = table->num_of_philos * table->times_must_eat;
+	table->timer = get_current_time();
 	return (1);
 }
 
@@ -55,11 +55,11 @@ int	init_philo(t_philo **philo, t_table *table)
 		(*philo)[philo_num].table = table;
 		(*philo)[philo_num].philo_num = philo_num + 1;
 		(*philo)[philo_num].left_hand = &table->fork[philo_num];
-		(*philo)[philo_num].last_meal = get_current_time();
 		if (philo_num == (table->num_of_philos - 1))
 			(*philo)[philo_num].right_hand = &table->fork[0];
 		else
 			(*philo)[philo_num].right_hand = &table->fork[philo_num + 1];
+		(*philo)[philo_num].last_meal = table->timer;
 	}
 	return (1);
 }

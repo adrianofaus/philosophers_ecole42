@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:12:11 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/18 17:48:03 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/19 22:55:01 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_routines.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 22:59:16 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/18 17:47:50 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/19 22:54:50 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

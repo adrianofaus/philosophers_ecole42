@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   waiter.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 22:39:37 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/18 16:53:07 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/19 23:17:15 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	*is_spotless(void *arg)
 			philo->table->times_must_eat)
 				philo->table->waiter.close_the_place = 1;
 		}
+		usleep(700);
 	}
 	return (NULL);
 }
