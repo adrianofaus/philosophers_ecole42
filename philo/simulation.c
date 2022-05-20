@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/19 22:55:26 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/20 03:24:47 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	print_action(t_philo *philo, int action);
 void	*devour(t_philo *philo);
 void	*take_a_nap(t_philo *philo);
 void	*philo_algorithm(void *ptr);
+void	put_in_the_sink(t_philo *philo);
 
 void	print_action(t_philo *philo, int action)
 {
@@ -52,6 +53,7 @@ void	*devour(t_philo *philo)
 	pthread_mutex_lock(philo->right_hand);
 	print_action(philo, HAS_TAKEN_A_FORK);
 	print_action(philo, EATING);
+	put_in_the_sink(philo);
 	usleep((philo->table->time_to_eat * 1000));
 	return (NULL);
 }
@@ -85,7 +87,7 @@ void	*simulation(void *ptr)
 	while (!philo->table->waiter.close_the_place)
 	{
 		if (philo->philo_num % 2 == 0)
-			usleep((42 * 4) / 2);
+			usleep(200);
 		if (philo->table->num_of_philos == 1)
 		{
 			pthread_mutex_lock(philo->left_hand);
@@ -94,8 +96,8 @@ void	*simulation(void *ptr)
 			break ;
 		}
 		devour(philo);
-		if (philo->table->times_must_eat)
-			put_in_the_sink(philo);
+		// if (philo->table->times_must_eat)
+		// 	put_in_the_sink(philo);
 		take_a_nap(philo);
 		print_action(philo, THINKING);
 	}
