@@ -6,7 +6,7 @@
 #    By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 20:28:35 by adrianofaus       #+#    #+#              #
-#    Updated: 2022/05/22 18:34:33 by afaustin         ###   ########.fr        #
+#    Updated: 2022/05/22 20:16:52 by afaustin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,9 @@ SOURCES			=	philo_bonus.c \
 					utils_bonus.c \
 					conversion_bonus.c \
 					simulation_bonus.c \
-					exec_routines_bonus.c
+					exec_routines_bonus.c \
+					exit_routines_bonus.c \
+					validation_bonus.c
 
 OBJS			=	$(SOURCES:%.c=%.o)
 
