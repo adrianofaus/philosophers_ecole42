@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:49:52 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/22 22:54:38 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/22 18:58:33 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ typedef struct s_table
 	int		num_of_forks;
 	int		time_to_eat;
 	int		time_to_sleep;
+	int		time_to_die;
 	int		times_must_eat;
+	int		total_times_must_eat;
 }			t_table;
 
 typedef struct s_philo
@@ -66,5 +68,20 @@ typedef struct s_philo
 // --------------------------------  init_philo_bonus.c  -----------------------
 int	init_table(t_table *table, char **input);
 int	init_philo(t_philo **philo, t_table *table);
+
+// --------------------------------  conversion.c  -----------------------------
+long	ft_atol(const char *nptr);
+
+// --------------------------------  utils.c  ----------------------------------
+char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *s);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+
+// --------------------------------  exec_routines_bonus.c  ----------------------------------
+int		give_birth_to_philos(t_philo *philo);
+int		exec_routines(t_philo *philo);
+
+// --------------------------------  simulatin_bonus.c  ----------------------------------
+int		simulation(t_philo *philo);
 
 #endif
