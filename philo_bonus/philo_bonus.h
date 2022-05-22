@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:49:52 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/22 01:46:04 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/22 22:54:38 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,31 @@ enum e_action
 	HAS_TAKEN_A_FORK,
 	DIED
 };
+
+typedef struct s_table
+{
+	sem_t	*forks;
+	sem_t	*must_eat_count;
+	int		num_of_philos;
+	int		num_of_forks;
+	int		time_to_eat;
+	int		time_to_sleep;
+	int		times_must_eat;
+}			t_table;
+
+typedef struct s_philo
+{
+	pid_t	pid;
+	sem_t	*left_hand;
+	sem_t	*right_hand;
+	t_table *table;
+	int		philo_num;
+	int		meals_count;
+	int		status;
+}			t_philo;
+
+// --------------------------------  init_philo_bonus.c  -----------------------
+int	init_table(t_table *table, char **input);
+int	init_philo(t_philo **philo, t_table *table);
 
 #endif

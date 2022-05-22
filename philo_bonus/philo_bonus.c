@@ -6,33 +6,11 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 01:03:19 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/22 07:13:56 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/22 22:53:24 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
-
-typedef struct s_table
-{
-	sem_t	*forks;
-	sem_t	*must_eat_count;
-	int		num_of_philos;
-	int		num_of_forks;
-	int		time_to_eat;
-	int		time_to_sleep;
-	int		times_must_eat;
-}			t_table;
-
-typedef struct s_philo
-{
-	pid_t	pid;
-	sem_t	*left_hand;
-	sem_t	*right_hand;
-	t_table *table;
-	int		philo_num;
-	int		meals_count;
-	int		status;
-}			t_philo;
 
 int	main(void)
 {
