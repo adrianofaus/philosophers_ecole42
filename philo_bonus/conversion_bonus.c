@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_bonus.c                                      :+:      :+:    :+:   */
+/*   conversion.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 01:03:19 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/22 20:27:09 by afaustin         ###   ########.fr       */
+/*   Created: 2022/05/05 14:49:26 by adrianofaus       #+#    #+#             */
+/*   Updated: 2022/05/22 18:04:40 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
 
-int	main(int argc, char **argv)
+long	ft_atol(const char *nptr)
 {
-	t_table	table;
-	t_philo	*philo;
+	long	result;
+	int		signal;
 
-	if (!is_valid_input(argc, argv))
-		return (print_err("Invalud input"));
-	if (!init_table(&table, &argv[1]))
-		return (print_err("Uninitialized data"));
-	if (!init_philo(&philo, &table))
+	result = 0;
+	signal = 1;
+	while (*nptr == ' ' || *nptr == '\n' || *nptr == '\r' || \
+			*nptr == '\f' || *nptr == '\t' || *nptr == '\v')
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		close_semaphores(&table);
-		return (print_err("Uninitialized philo"));
+		if (*nptr == '-')
+			signal *= -1;
+		nptr++;
 	}
-	exec_routines(philo);
-	ft_free_ptr(philo);
-	return (0);
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		result = (result * 10) + (*nptr - '0') * signal;
+		nptr++;
+	}
+	return (result);
 }
