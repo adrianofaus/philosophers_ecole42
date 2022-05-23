@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:49:52 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/22 20:29:16 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/23 00:20:43 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_table
 	int		time_to_die;
 	int		times_must_eat;
 	int		total_times_must_eat;
+	long	timer;
 }			t_table;
 
 typedef struct s_philo
@@ -95,5 +96,9 @@ int		is_numeric_string(char *str);
 int		ft_isdigit(int c);
 int		is_valid_input(int num_of_args, char **input);
 int		is_valid_int(char *str);
+
+// --------------------------------  timer_bonus.c  ----------------------------
+long	get_current_time(void);
+long	get_time_interval(long old_timestamp);
 
 #endif
