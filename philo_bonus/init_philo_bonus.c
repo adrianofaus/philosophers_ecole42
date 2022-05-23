@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:48:58 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:03 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/23 18:14:07 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	init_semaphores(t_table *table)
 	table->forks = sem_open("fork", O_CREAT, 0600, table->num_of_forks);
 	table->must_eat_count = \
 	sem_open("must_eat", O_CREAT, 0600, table->total_times_must_eat);
+	table->died = sem_open("died", O_CREAT, 0600, 1);
 	if (table->must_eat_count)
 	{
 		c = -1;
@@ -47,7 +48,7 @@ int	init_table(t_table *table, char **input)
 	table->num_of_forks = table->num_of_philos;
 	table->total_times_must_eat = table->times_must_eat * table->num_of_philos;
 	init_semaphores(table);
-	table->timer = 0;
+	table->timer = get_current_time();
 	return (1);
 }
 
@@ -66,6 +67,7 @@ int	init_philo(t_philo **philo, t_table *table)
 		(*philo)[philo_num].philo_num = philo_num + 1;
 		(*philo)[philo_num].left_hand = (*philo)->table->forks;
 		(*philo)[philo_num].right_hand = (*philo)->table->forks;
+		(*philo)[philo_num].last_meal = table->timer;
 	}
 	return (1);
 }
