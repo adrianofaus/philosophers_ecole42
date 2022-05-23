@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_routines_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:34:42 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/22 19:38:42 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:10:10 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	give_birth_to_philos(t_philo *philo)
 	int	i;
 
 	i = -1;
+	if (philo->table->timer == 0)
+		philo->table->timer = get_current_time();
 	while (++i < philo->table->num_of_philos)
 	{
 		philo[i].pid = fork();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:30:59 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/23 00:26:07 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:00:54 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	devour(t_philo *philo)
 int	simulation(t_philo *philo)
 {
 	if (philo->philo_num % 2 == 0)
-		usleep(200);
+		usleep(300);
 	while (1)
 	{
 		devour(philo);
