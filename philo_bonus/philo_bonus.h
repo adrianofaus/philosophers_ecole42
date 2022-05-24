@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:49:52 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/23 18:12:01 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/24 14:18:53 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,27 @@ enum e_action
 	DIED
 };
 
+typedef struct s_waiter
+{
+	pthread_t	th;
+	int			sink_capacity;
+	int			close_the_place;
+}				t_waiter;
+
 typedef struct s_table
 {
-	sem_t	*forks;
-	sem_t	*must_eat_count;
-	sem_t	*died;
-	int		num_of_philos;
-	int		num_of_forks;
-	int		time_to_eat;
-	int		time_to_sleep;
-	int		time_to_die;
-	int		times_must_eat;
-	int		total_times_must_eat;
-	long	timer;
+	sem_t		*forks;
+	sem_t		*must_eat_count;
+	sem_t		*died;
+	sem_t		*microphone;
+	t_waiter	waiter;
+	int			num_of_philos;
+	int			num_of_forks;
+	int			time_to_eat;
+	int			time_to_sleep;
+	int			time_to_die;
+	int			times_must_eat;
+	long		timer;
 }			t_table;
 
 typedef struct s_philo

@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:30:59 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/23 18:51:35 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/24 17:01:51 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,19 @@ void	print_action(t_philo *philo, int action)
 {
 	long	time_interval;
 
-	// if (get_time_interval(philo->last_meal) > philo->table->time_to_die)
-	// 	sem_post(philo->table->died);
+	sem_wait(philo->table->microphone);
 	time_interval = get_time_interval(philo->table->timer);
+	if (get_time_interval(philo->last_meal) > philo->table->time_to_die && !philo->table->waiter.close_the_place)
+	{
+		printf("%ld\t%d died\n", time_interval, philo->philo_num);
+		// pthread_detach(philo->table->waiter.th);
+		// sem_close(philo->table->must_eat_count);
+		sem_post(philo->table->died);
+		exit(1);
+	}
 	if (action == EATING)
 	{
-		// philo->last_meal = get_current_time();
+		philo->last_meal = get_current_time();
 		printf("%ld\t%d is eating\n", time_interval, philo->philo_num);
 	}
 	else if (action == SLEEPING)
@@ -30,6 +37,7 @@ void	print_action(t_philo *philo, int action)
 		printf("%ld\t%d has taken a fork\n", time_interval, philo->philo_num);
 	else if (action == THINKING)
 		printf("%ld\t%d is thinking\n", time_interval, philo->philo_num);
+	sem_post(philo->table->microphone);
 }
 
 void	take_a_nap(t_philo *philo)
