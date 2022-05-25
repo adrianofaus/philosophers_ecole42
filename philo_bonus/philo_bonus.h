@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:49:52 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/23 00:20:43 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/24 20:44:53 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,27 @@ enum e_action
 	DIED
 };
 
+typedef struct s_waiter
+{
+	pthread_t	th;
+	int			sink_capacity;
+	int			close_the_place;
+}				t_waiter;
+
 typedef struct s_table
 {
-	sem_t	*forks;
-	sem_t	*must_eat_count;
-	int		num_of_philos;
-	int		num_of_forks;
-	int		time_to_eat;
-	int		time_to_sleep;
-	int		time_to_die;
-	int		times_must_eat;
-	int		total_times_must_eat;
-	long	timer;
+	sem_t		*forks;
+	sem_t		*must_eat_count;
+	sem_t		*microphone;
+	sem_t		*died;
+	t_waiter	waiter;
+	int			num_of_philos;
+	int			num_of_forks;
+	int			time_to_eat;
+	int			time_to_sleep;
+	int			time_to_die;
+	int			times_must_eat;
+	long		timer;
 }			t_table;
 
 typedef struct s_philo
@@ -60,10 +69,12 @@ typedef struct s_philo
 	pid_t		pid;
 	sem_t		*left_hand;
 	sem_t		*right_hand;
+	sem_t		*died;
 	t_table		*table;
 	int			philo_num;
 	int			meals_count;
 	int			status;
+	long		last_meal;
 }			t_philo;
 
 // --------------------------------  init_philo_bonus.c  -----------------------
@@ -84,6 +95,7 @@ int		exec_routines(t_philo *philo);
 
 // --------------------------------  simulatin_bonus.c  ------------------------
 int		simulation(t_philo *philo);
+void	print_action(t_philo *philo, int action);
 
 // --------------------------------  exit_routines.c  --------------------------
 int		ft_free_ptr(void *ptr);
@@ -100,5 +112,11 @@ int		is_valid_int(char *str);
 // --------------------------------  timer_bonus.c  ----------------------------
 long	get_current_time(void);
 long	get_time_interval(long old_timestamp);
+
+// --------------------------------  waiter.c  ---------------------------------
+void	is_spotless(t_philo *philo);
+void	*check_sink(void *arg);
+void	close_the_place(t_philo *philo);
+int		check_status(t_philo *philo, int end_time);
 
 #endif

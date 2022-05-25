@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 20:28:35 by adrianofaus       #+#    #+#              #
-#    Updated: 2022/05/23 00:22:57 by afaustin         ###   ########.fr        #
+#    Updated: 2022/05/23 18:07:54 by adrianofaus      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SOURCES			=	philo_bonus.c \
 					exec_routines_bonus.c \
 					exit_routines_bonus.c \
 					validation_bonus.c \
-					time_bonus.c
+					time_bonus.c \
+					waiter_bonus.c
 
 OBJS			=	$(SOURCES:%.c=%.o)
 
