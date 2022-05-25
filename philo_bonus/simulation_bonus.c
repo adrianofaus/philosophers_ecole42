@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:30:59 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/25 18:25:25 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/25 19:43:29 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,13 @@ void	print_action(t_philo *philo, int action)
 
 	sem_wait(philo->table->microphone);
 	time_interval = get_time_interval(philo->table->timer);
-	// if (is_dead(philo))
-	// {
-	// 	printf("%ld\t%d died\n", time_interval, philo->philo_num);
-	// 	// pthread_detach(philo->table->waiter.th);
-	// 	// sem_close(philo->table->must_eat_count);
-	// 	sem_post(philo->table->died);
-	// 	exit(1);
-	// }
 	if (action == DIED)
+	{
 		printf("%ld\t%d died\n", time_interval, philo->philo_num);
-	if (action == EATING)
+		sem_post(philo->table->died);
+		exit(1);
+	}
+	else if (action == EATING)
 	{
 		philo->last_meal = get_current_time();
 		printf("%ld\t%d is eating\n", time_interval, philo->philo_num);
@@ -45,9 +41,8 @@ void	print_action(t_philo *philo, int action)
 void	take_a_nap(t_philo *philo)
 {
 	print_action(philo, SLEEPING);
-	// usleep(philo->table->time_to_sleep * 1000);
 	if (!check_status(philo, philo->table->time_to_sleep))
-		exit(1);
+		print_action(philo, DIED);
 }
 
 void	put_in_the_sink(t_philo *philo)
@@ -65,7 +60,7 @@ void	devour(t_philo *philo)
 	print_action(philo, HAS_TAKEN_A_FORK);
 	print_action(philo, EATING);
 	if (!check_status(philo, philo->table->time_to_eat))
-		exit(1);
+		print_action(philo, DIED);
 	put_in_the_sink(philo);
 	sem_post(philo->left_hand);
 	sem_post(philo->right_hand);
@@ -78,23 +73,36 @@ void	start_thinking(t_philo *philo)
 	{
 		if (get_time_interval(philo->last_meal) > philo->table->time_to_die)
 		{
-			print_action(philo, DIED);
 			sem_post(philo->table->died);
+			print_action(philo, DIED);
 			exit(1);
 		}
-		usleep(500);
+		usleep(200);
 	}
 }
 
 int	simulation(t_philo *philo)
 {
+	if (philo->table->num_of_philos == 1)
+	{
+		sem_wait(philo->left_hand);
+		print_action(philo, HAS_TAKEN_A_FORK);
+		while (1)
+		{
+			if (get_time_interval(philo->last_meal) > philo->table->time_to_die)
+			{
+				sem_post(philo->table->died);
+				print_action(philo, DIED);
+				exit(1);
+			}
+		}
+	}
 	if (philo->philo_num % 2 == 0)
 		usleep(300);
 	while (1)
 	{
 		devour(philo);
 		take_a_nap(philo);
-		
 		start_thinking(philo);
 	}
 	return (0);

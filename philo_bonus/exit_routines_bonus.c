@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_routines_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:01:25 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/22 20:29:31 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/25 19:04:29 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,6 @@ void	close_semaphores(t_table *table)
 {
 	sem_close(table->forks);
 	sem_close(table->must_eat_count);
+	sem_close(table->died);
+	sem_close(table->microphone);
 }

@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:34:42 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/24 17:33:28 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/25 19:07:15 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ int	exec_routines(t_philo *philo)
 	while (++i < philo->table->num_of_philos)
 		waitpid(philo[i].pid, &philo[i].status, 0);
 	pthread_detach(philo->table->waiter.th);
-	pthread_join(philo->table->waiter.th, NULL);
 	return (0);
 }
