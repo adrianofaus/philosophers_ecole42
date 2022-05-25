@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:14:59 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/24 16:53:36 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/25 18:24:17 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,28 @@ void	*check_sink(void *arg)
 		sem_wait(philo->table->must_eat_count);
 	close_the_place(philo);
 	return (NULL);
+}
+
+int	check_status(t_philo *philo, int end_time)
+{
+	int		interval;
+	long	start_time;
+
+	interval = 0;
+	start_time = get_current_time();
+	while (interval < end_time)
+	{
+		interval += get_time_interval(start_time);
+		start_time = get_current_time();
+		if (get_time_interval(philo->last_meal) > philo->table->time_to_die)
+		{
+			print_action(philo, DIED);
+			sem_post(philo->table->died);
+			return (0);
+		}
+		usleep(500);
+	}
+	return (1);
 }
 
 void	is_spotless(t_philo *philo)

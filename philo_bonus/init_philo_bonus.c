@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:48:58 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/24 14:20:08 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/24 20:38:33 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int			init_table(t_table *table, char **input);
 int			init_philo(t_philo **philo, t_table *table);
-static int	init_semaphores(t_table *table);
+static int	init_table_semaphores(t_table *table);
 
-static int	init_semaphores(t_table *table)
+static int	init_table_semaphores(t_table *table)
 {
 	int	c;
 
@@ -52,7 +52,7 @@ int	init_table(t_table *table, char **input)
 	table->num_of_forks = table->num_of_philos;
 	table->waiter.close_the_place = 1;
 	table->waiter.sink_capacity = table->times_must_eat * table->num_of_philos;
-	init_semaphores(table);
+	init_table_semaphores(table);
 	table->timer = get_current_time();
 	return (1);
 }

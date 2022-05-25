@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:49:52 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/24 14:18:53 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/24 20:44:53 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ typedef struct s_table
 {
 	sem_t		*forks;
 	sem_t		*must_eat_count;
-	sem_t		*died;
 	sem_t		*microphone;
+	sem_t		*died;
 	t_waiter	waiter;
 	int			num_of_philos;
 	int			num_of_forks;
@@ -69,6 +69,7 @@ typedef struct s_philo
 	pid_t		pid;
 	sem_t		*left_hand;
 	sem_t		*right_hand;
+	sem_t		*died;
 	t_table		*table;
 	int			philo_num;
 	int			meals_count;
@@ -94,6 +95,7 @@ int		exec_routines(t_philo *philo);
 
 // --------------------------------  simulatin_bonus.c  ------------------------
 int		simulation(t_philo *philo);
+void	print_action(t_philo *philo, int action);
 
 // --------------------------------  exit_routines.c  --------------------------
 int		ft_free_ptr(void *ptr);
@@ -115,5 +117,6 @@ long	get_time_interval(long old_timestamp);
 void	is_spotless(t_philo *philo);
 void	*check_sink(void *arg);
 void	close_the_place(t_philo *philo);
+int		check_status(t_philo *philo, int end_time);
 
 #endif
