@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:49:52 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/24 20:44:53 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/26 01:45:44 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,8 @@ void	is_spotless(t_philo *philo);
 void	*check_sink(void *arg);
 void	close_the_place(t_philo *philo);
 int		check_status(t_philo *philo, int end_time);
+
+// --------------------------------  print_actions_bonus.c  --------------------
+void	print_action(t_philo *philo, int action);
 
 #endif
