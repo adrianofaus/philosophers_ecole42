@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:30:59 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/26 00:07:39 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/26 00:15:45 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ void	start_thinking(t_philo *philo)
 		// time_without_eat(philo);
 		if (get_time_interval(philo->last_meal) > philo->table->time_to_die)
 		{
-			sem_post(philo->table->died);
 			print_action(philo, DIED);
+			sem_post(philo->table->died);
 			exit(1);
 		}
 	}
