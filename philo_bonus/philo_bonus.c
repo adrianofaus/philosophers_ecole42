@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 01:03:19 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/26 00:14:23 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/26 22:19:56 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		return (print_err("Uninitialized philo"));
 	}
 	exec_routines(philo);
+	close_semaphores(&table);
 	ft_free_ptr(philo);
 	return (0);
 }

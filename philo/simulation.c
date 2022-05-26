@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/20 03:24:47 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/26 21:37:08 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	print_action(t_philo *philo, int action)
 		else if (action == THINKING)
 			printf("%ld\t%d is thinking\n", time_interval, philo->philo_num);
 		else if (action == HAS_TAKEN_A_FORK)
-			printf("%ld\t%d has taken a fork\n", time_interval, philo->philo_num);
+			printf("%ld\t%d has taken a fork\n", time_interval, \
+			philo->philo_num);
 	}
 	pthread_mutex_unlock(&(philo->table->microphone));
 }
@@ -96,8 +97,6 @@ void	*simulation(void *ptr)
 			break ;
 		}
 		devour(philo);
-		// if (philo->table->times_must_eat)
-		// 	put_in_the_sink(philo);
 		take_a_nap(philo);
 		print_action(philo, THINKING);
 	}

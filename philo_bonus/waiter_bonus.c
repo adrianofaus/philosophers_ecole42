@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   waiter_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:14:59 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/26 00:15:58 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/26 22:18:29 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	close_the_place(t_philo *philo)
 	i = -1;
 	while (++i < philo->table->num_of_philos)
 		kill(philo[i].pid, SIGKILL);
-	philo->table->waiter.close_the_place = 0;
 	sem_post(philo->table->died);
 }
 

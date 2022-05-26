@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_routines_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:34:42 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/25 19:07:15 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/26 22:20:51 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ int	exec_routines(t_philo *philo)
 	is_spotless(philo);
 	while (++i < philo->table->num_of_philos)
 		waitpid(philo[i].pid, &philo[i].status, 0);
-	pthread_detach(philo->table->waiter.th);
 	return (0);
 }
