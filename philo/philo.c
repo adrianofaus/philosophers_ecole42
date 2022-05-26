@@ -3,26 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:53:20 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/20 03:13:37 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:16:09 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-void	print_meals_log(t_philo *philo)
-{
-	int	i;
-
-	i = -1;
-	printf("#### MEALS LOG ####\n");
-	while (++i < philo->table->num_of_philos)
-	{
-		printf("----\nPhilo_num\t%d\nMeals\t\t%d\n", philo[i].philo_num, philo[i].meals_count);
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -39,7 +27,6 @@ int	main(int argc, char **argv)
 		return (print_err("Uninitialized philo"));
 	}
 	exec_routines(philo);
-	print_meals_log(philo);
 	destroy_all_mutexes(&table);
 	ft_free_ptr((void *)philo->table->fork);
 	ft_free_ptr((void *)philo);

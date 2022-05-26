@@ -6,7 +6,7 @@
 /*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:14:59 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/25 19:58:06 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/26 00:04:45 by adrianofaus      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,11 @@ void	*check_sink(void *arg)
 
 int	check_status(t_philo *philo, int end_time)
 {
-	int		interval;
 	long	start_time;
 
-	interval = 0;
 	start_time = get_current_time();
-	while (interval < end_time)
+	while (get_time_interval(start_time) < end_time)
 	{
-		interval += get_time_interval(start_time);
-		start_time = get_current_time();
 		if (get_time_interval(philo->last_meal) > philo->table->time_to_die)
 			return (0);
 		usleep(500);
