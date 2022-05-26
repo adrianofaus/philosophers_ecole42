@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 01:03:19 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/26 22:19:56 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/27 01:53:47 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	t_table	table;
 	t_philo	*philo;
 
+	// setbuf(stdout, NULL);
 	if (!is_valid_input(argc, argv))
 		return (print_err("Invalid input"));
 	if (!init_table(&table, &argv[1]))

@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:49:52 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/26 01:45:44 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/27 01:53:28 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <semaphore.h> //sem_open, sem_close, sem_post, sem_wait, sem_unlink
 # include <fcntl.h> //for O_* constants
 # include <sys/stat.h> //for mode constants
+# include <string.h> //memset
 
 // --------------------------------  DEFINES  ----------------------------------
 

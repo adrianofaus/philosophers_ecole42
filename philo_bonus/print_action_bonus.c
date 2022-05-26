@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 01:44:37 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/26 22:10:01 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/27 00:29:10 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	print_action(t_philo *philo, int action)
 	{
 		printf("%ld\t%d died\n", time_interval, philo->philo_num);
 		sem_post(philo->table->died);
-		// exit(1);
 	}
 	else if (action == EATING)
 	{
