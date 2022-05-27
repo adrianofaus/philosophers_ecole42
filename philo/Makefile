@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+         #
+#    By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 20:28:35 by adrianofaus       #+#    #+#              #
-#    Updated: 2022/05/17 21:39:20 by adrianofaus      ###   ########.fr        #
+#    Updated: 2022/05/26 19:40:26 by afaustin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,14 +28,12 @@ INCLUDES		=	-I .
 DEBUG			=	-g3
 
 # COMPILATION
-CFLAGS			=	-Wall -Wextra -Werror -pthread
+CFLAGS			=	-Wall -Wextra -Werror -pthread -fsanitize=address
 CC				=	gcc $(CFLAGS) $(INCLUDES)
 VALGRIND		=	valgrind \
 					--leak-check=full \
 					--show-leak-kinds=all \
 					--track-origins=yes \
-					#--trace-children=yes \
-					#--track-fds=yes
 
 #PATHS
 PATH_OBJ		=	obj/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   waiter_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:14:59 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/25 18:24:17 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/27 03:12:43 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	close_the_place(t_philo *philo);
 void	*check_sink(void *arg);
 void	is_spotless(t_philo *philo);
+int		check_status(t_philo *philo, int end_time);
 
 void	close_the_place(t_philo *philo)
 {
@@ -23,14 +24,13 @@ void	close_the_place(t_philo *philo)
 	i = -1;
 	while (++i < philo->table->num_of_philos)
 		kill(philo[i].pid, SIGKILL);
-	philo->table->waiter.close_the_place = 0;
 	sem_post(philo->table->died);
 }
 
 void	*check_sink(void *arg)
 {
-	int	i;
-	t_philo *philo;
+	int		i;
+	t_philo	*philo;
 
 	i = -1;
 	philo = (t_philo *)arg;
@@ -42,21 +42,13 @@ void	*check_sink(void *arg)
 
 int	check_status(t_philo *philo, int end_time)
 {
-	int		interval;
 	long	start_time;
 
-	interval = 0;
 	start_time = get_current_time();
-	while (interval < end_time)
+	while (get_time_interval(start_time) < end_time)
 	{
-		interval += get_time_interval(start_time);
-		start_time = get_current_time();
 		if (get_time_interval(philo->last_meal) > philo->table->time_to_die)
-		{
-			print_action(philo, DIED);
-			sem_post(philo->table->died);
 			return (0);
-		}
 		usleep(500);
 	}
 	return (1);
@@ -64,7 +56,8 @@ int	check_status(t_philo *philo, int end_time)
 
 void	is_spotless(t_philo *philo)
 {
-	pthread_create(&philo->table->waiter.th, NULL, &check_sink, philo);
+	if (philo->table->times_must_eat)
+		pthread_create(&philo->table->waiter.th, NULL, &check_sink, philo);
 	sem_wait(philo->table->died);
 	close_the_place(philo);
 }

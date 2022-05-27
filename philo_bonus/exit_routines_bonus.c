@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:01:25 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/22 20:29:31 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:12:33 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,6 @@ void	close_semaphores(t_table *table)
 {
 	sem_close(table->forks);
 	sem_close(table->must_eat_count);
+	sem_close(table->died);
+	sem_close(table->microphone);
 }
