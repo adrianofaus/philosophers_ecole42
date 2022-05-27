@@ -6,11 +6,17 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:30:59 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/27 01:29:20 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:12:19 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
+
+void	take_a_nap(t_philo *philo);
+void	put_in_the_sink(t_philo *philo);
+void	devour(t_philo *philo);
+void	start_thinking(t_philo *philo);
+int		simulation(t_philo *philo);
 
 void	take_a_nap(t_philo *philo)
 {

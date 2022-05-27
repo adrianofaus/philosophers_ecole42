@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 22:59:16 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/19 22:54:50 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/27 02:54:59 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	give_birth_to_philos(t_philo *philo);
 int	bound_philos_together(t_philo *philo);
 int	exec_routines(t_philo *philo);
+int	give_birth_to_waiter(t_philo *philo);
+int	bound_waiter_together(t_philo *philo);
 
 int	give_birth_to_philos(t_philo *philo)
 {

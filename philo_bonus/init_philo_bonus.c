@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_philo_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianofaus <adrianofaus@student.42.fr>    +#+  +:+       +#+        */
+/*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:48:58 by afaustin          #+#    #+#             */
-/*   Updated: 2022/05/25 19:02:54 by adrianofaus      ###   ########.fr       */
+/*   Updated: 2022/05/27 03:11:05 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int	init_table(t_table *table, char **input)
 	else
 		table->times_must_eat = 0;
 	table->num_of_forks = table->num_of_philos;
-	table->waiter.close_the_place = 1;
 	table->waiter.sink_capacity = table->times_must_eat * table->num_of_philos;
 	open_semaphores(table);
 	init_semaphores(table);

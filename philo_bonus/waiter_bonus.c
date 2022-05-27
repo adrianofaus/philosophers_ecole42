@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:14:59 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/27 01:35:56 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:12:43 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	close_the_place(t_philo *philo);
 void	*check_sink(void *arg);
 void	is_spotless(t_philo *philo);
+int		check_status(t_philo *philo, int end_time);
 
 void	close_the_place(t_philo *philo)
 {

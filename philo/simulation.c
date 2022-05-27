@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 23:05:08 by adrianofaus       #+#    #+#             */
-/*   Updated: 2022/05/26 21:37:08 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:00:37 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	*simulation(void *ptr)
 	while (!philo->table->waiter.close_the_place)
 	{
 		if (philo->philo_num % 2 == 0)
-			usleep(200);
+			usleep(300);
 		if (philo->table->num_of_philos == 1)
 		{
 			pthread_mutex_lock(philo->left_hand);
