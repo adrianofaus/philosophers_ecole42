@@ -7,7 +7,7 @@
 * [The Project](#the-project)
 
 ## Introduction
-In this project, I learned how to deal with threading. Also, I saw how to create use mutexes to prevent things like _data racing_ and _dead locks_.
+In this project, I learned how to deal with threading. Also, I had to use mutexes to prevent things like _data racing_ and _dead locks_.
 
 ## Skills that I have improved
 * Imperative programming
