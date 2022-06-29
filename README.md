@@ -39,9 +39,7 @@ In order to succeed in doing this project I had to master the following:
 
 ### Diagram
 ![Philosophers](https://user-images.githubusercontent.com/63206471/176323139-cdc7a72e-7c4c-421a-9ec6-e9304a32312d.png)
-
-### Simulation
-![Philo_sim](https://user-images.githubusercontent.com/63206471/176326990-d09cd54f-7493-4fb8-b86b-bb329a49d8b9.gif)
+<img src="https://user-images.githubusercontent.com/63206471/176323139-cdc7a72e-7c4c-421a-9ec6-e9304a32312d.png" width="2rem" height="2rem">
 
 ### How to run it?
 
@@ -52,3 +50,6 @@ In order to succeed in doing this project I had to master the following:
 
 A philosophers should die due to short CPU SCHEDULING TIME
 ```
+
+### Simulation
+![Philo_sim](https://user-images.githubusercontent.com/63206471/176326990-d09cd54f-7493-4fb8-b86b-bb329a49d8b9.gif)
