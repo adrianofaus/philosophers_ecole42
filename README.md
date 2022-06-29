@@ -46,13 +46,9 @@ In order to succeed in doing this project I had to master the following:
 ### How to run it?
 
 ```
-1 - make or make bonus
-2 - Example => ./pipex file1 cmd1 cmd2 cmd3 ... cmdn file2
-It should behave like:
-< file1 cmd1 | cmd2 | cmd3 ... | cmdn > file2
+1 - Go to philo directory
+2 - make
+3 - ./philo 2 800 400 400
 
-You can also run with here_doc
-Example =>  ./pipex here_doc LIMITER cmd1 cmd2 ... cmdn file
-IT should behave like:
-cmd << LIMITER | cmd1 >> file
+A philosophers should die due to short CPU SCHEDULING TIME
 ```
