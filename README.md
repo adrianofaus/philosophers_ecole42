@@ -47,7 +47,7 @@ In order to succeed in doing this project I had to master the following:
 2 - make
 3 - ./philo 2 800 400 400
 
-A philosophers should die due to short CPU SCHEDULING TIME
+A philosophers should die due to a brief delay on CPU SCHEDULING TIME
 ```
 
 ### Simulation
